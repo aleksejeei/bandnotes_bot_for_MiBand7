@@ -11,7 +11,7 @@ import func
 wait = []
 name_note = {}
 
-TOKEN = '5588508331:AAHjBaq9KayQMRUH2mKznOXdQ9mMO0aDz8A' # Токен бота
+TOKEN = '' # Токен бота
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
