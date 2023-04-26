@@ -1,16 +1,6 @@
 import aiosqlite
 import asyncio
 
-async def create_table():
-    async with aiosqlite.connect('data.db') as conn:
-        await conn.execute("""CREATE TABLE IF NOT EXISTS wait_note(
-                            userid INT,
-                            );
-                            """)
-        await conn.commit()
-
-
-
 async def add_null_list(user_id):
     async with aiosqlite.connect('data.db') as conn:
         await conn.execute("INSERT INTO notes VALUES(?, ?);", (user_id, '[]'))
@@ -46,7 +36,3 @@ async def check_pages(user_id):
         result = await read.fetchone()
         result = eval(str(result))[0]
         return result
-
-
-
-#asyncio.run(create_table())

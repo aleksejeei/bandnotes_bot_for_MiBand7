@@ -11,9 +11,7 @@ def copy_files(user_id, content):
         write.write(content)
         write.close()
     path = f'{user_id}_notes'
-    #writer(user_id)
     shutil.make_archive(path, 'zip', str(user_id))
-
     os.rename(f'{user_id}_notes.zip', f'{user_id}_notes.bin')
 
 
